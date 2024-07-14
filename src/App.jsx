@@ -7,6 +7,7 @@ import {
   RouterProvider
 } from 'react-router-dom'
 import { Layout, Home, ShopingCart, Products } from './Components/index'
+import CartContextProvider from './Context/CartContextProvider'
 
 
 
@@ -21,10 +22,9 @@ const Routes = createBrowserRouter(
 )
 
 function App() {
-
   return (
     <>
-      <RouterProvider router={Routes} />
+        <RouterProvider router={Routes} />
     </>
   )
 }

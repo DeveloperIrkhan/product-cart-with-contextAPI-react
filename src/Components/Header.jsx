@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartContext from '../Context/CartContext'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
+  const { cart } = useContext(CartContext)
+
   return (
     <nav className="navbar navbar-expand-lg bg-success" data-bs-theme="dark">
       <div className="container-fluid">
@@ -33,7 +36,9 @@ const Header = () => {
                   `nav-link ${isActive ?
                     "text-danger fw-bold text-capitalize" : "text-black"}`}
                 aria-current="page"
-                to={'shopingcart'}>Shoping Cart</NavLink>
+                to={'shopingcart'}>Shoping Cart : {"  "}
+                {cart.length > 0 ? (<span className='text-danger fw-bold'>{cart.length}</span>) : (<span></span>)}
+              </NavLink>
             </li>
           </ul>
         </div>
