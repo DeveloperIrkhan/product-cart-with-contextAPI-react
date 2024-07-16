@@ -13,7 +13,12 @@ const ShopingCart = () => {
 
     <div className="container">
       <div className=''>
-        <h3 className='text-center p-3'>Shoping Card</h3>
+        <div className="">
+        <span className='fs-3 fw-bold text-center'>Shoping Card</span>
+        </div>
+        <div className="">
+        <span className='d-flex fw-bold justify-content-end'>Your Total Price is : {total}</span>
+        </div>
         {cart.length > 0 ? (
           <div className='d-flex flex-wrap justify-content-center'>
             {cart.map((product) => {
@@ -31,7 +36,6 @@ const ShopingCart = () => {
         )}
       </div>
       <br />
-      <h3>Your Total Price is : {total}</h3>
     </div>
   )
 }
